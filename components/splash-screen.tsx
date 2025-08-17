@@ -76,6 +76,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         setProgressWidth(width)
         if (width >= 100) {
           clearInterval(interval)
+          setTimeout(() => {
+            if (onComplete) onComplete()
+          }, 500)
         }
       }, 30)
     }, 1000)
